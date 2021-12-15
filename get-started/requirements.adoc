@@ -1,0 +1,146 @@
+---
+sidebar: sidebar 
+permalink: get-started/requirements.html 
+keywords: what are astra kubernetes requirements, astra control requirements, astra supported versions, apps, supported apps, mariadb, mysql, postgres, kubernetes version, ubuntu, image type, networking 
+summary: Kubernetes クラスタ、アプリ、 Web ブラウザのサポートを確認して、 Astra Control Center を使い始めましょう。 
+---
+= Astra Control Center の要件
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+まず、 Kubernetes クラスタ、アプリケーション、ライセンス、 Web ブラウザのサポート状況を確認します。
+
+
+
+== Kubernetes クラスタの一般的な要件
+
+Kubernetes クラスタを Astra Control Center から検出して管理できるようにするには、 Kubernetes クラスタが次の一般的な要件を満たしている必要があります。
+
+* * イメージレジストリ * ： Astra Control Center ビルドイメージをプッシュできる、既存のプライベート Docker イメージレジストリが必要です。イメージをアップロードするイメージレジストリの URL が必要です。また、プライベートコンテナレジストリのイメージにタグを付けておく必要があります。
+* * Trident / ONTAP ストレージ構成 * ： Astra Control Center には、 Trident バージョン 21.01 または 21.04 がインストール済みで、ストレージバックエンドとして NetApp ONTAP バージョン 9.5 以降と連携するように設定されている必要があります。Astra Control Center を使用するには、ストレージクラスを作成してデフォルトのストレージクラスとして設定する必要があります。Astra Control Center は、 Trident が提供する次の ONTAP ドライバをサポートしています。
++
+** ONTAP - NAS
+** ONTAP-NAS-flexgroup
+** ONTAP - SAN
+** ONTAP - SAN - 経済性
+
+
+
+
+Kubernetes クラスタを Astra Control Center から管理し、クラスタを使用して Astra Control Center インストールをホストする場合、クラスタには次の追加要件があります。
+
+* Kubernetes の最新バージョン https://kubernetes-csi.github.io/docs/snapshot-controller.html["Snapshot コントローラコンポーネント"^] がインストールされている
+* Trident https://netapp-trident.readthedocs.io/en/latest/kubernetes/concepts/objects.html?highlight=VolumeSnapshotClass#kubernetes-volumesnapshotclass-objects["volumesnapshotclass オブジェクト"^] は管理者によって定義されています
+* クラスタにはデフォルトの Kubernetes ストレージクラスが存在します
+* Trident を使用するように少なくとも 1 つのストレージクラスが設定されている
+* Astra Control Center の FQDN を Astra Control Center サービスの外部 IP アドレスに指定する方法
+
+
+
+
+=== OpenShift クラスタ
+
+Astra Control Center には、 ONTAP 9.5 以降でサポートされる Trident ストレージクラスを含む Red Hat OpenShift Container Platform 4.6.8 または 4.7 クラスタが必要です。その属性は次のとおりです。
+
+* 300 GB 以上の ONTAP ストレージ容量
+* 3 台のコントローラノード： CPU コア × 4 、 16GB RAM 、および 120 GB のストレージを搭載
+* 3 つのワーカーノードに 12 個以上の CPU コア、 32GB RAM 、 50GB のストレージを搭載
+* Kubernetes バージョン 1.19 または 1.20
+* サービスタイプ「 LoadBalancer 」は、 OpenShift クラスタ内のサービスに送信される入力トラフィックに使用できます
+* Astra Control Center の FQDN をロードバランシング IP アドレスに指定する方法
+
+
+
+NOTE: これらの最小要件は、 OpenShift クラスタ上で実行される唯一のアプリケーションが Astra Control Center であることを前提としています。クラスタで追加のアプリケーションを実行している場合は、それに応じてこれらの最小要件を調整する必要があります。
+
+クラスタが最小要件を満たしていることを確認し、 Kubernetes クラスタで Astra Control Center の高可用性を実現するために Kubernetes のベストプラクティスに従う必要があります。
+
+
+NOTE: OpenShift 4.8 はサポートされません。
+
+[NOTE]
+====
+アプリケーションのクローニング中、 Astra Control Center は OpenShift でボリュームをマウントし、ファイルの所有権を変更できるようにする必要があります。このため、次のコマンドを使用してボリューム操作を正常に完了できるように ONTAP を設定する必要があります。
+
+. 「 export-policy rule modify -vserver svm0 -policyname default -ruleindex 1 -superuser sys 」という形式で指定します
+. 「 export-policy rule modify -policyname default -ruleindex 1 -anon 65534 」と入力します
+
+
+====
+
+NOTE: 管理対象のコンピューティングリソースとして 2 つ目の OpenShift 4.6 または 4.7 クラスタを追加する場合は、 Trident ボリュームスナップショット機能が有効になっていることを確認する必要があります。Trident の公式サイトをご覧ください https://netapp-trident.readthedocs.io/en/stable-v21.04/kubernetes/operations/tasks/volumes/snapshots.html?highlight=volumesnapshot#on-demand-volume-snapshots["手順"^] Trident を使用してボリューム Snapshot を有効にし、テストしてください。
+
+
+
+=== アプリケーション管理の要件
+
+Astra Control Center には、次のアプリケーション管理要件があります。
+
+* * ライセンス * ： Astra Control Center を使用してアプリケーションを管理するには、 Astra Control Center のライセンスが必要です。
+* * Helm 3 * ： Helm を使用してアプリを展開する場合、 Astra Control Center には Helm バージョン 3 が必要です。Helm 3 （または Helm 2 から Helm 3 にアップグレード）を使用して展開されたアプリケーションの管理とクローニングが完全にサポートされています。Helm 2 で展開されたアプリケーションはサポートされていません。
+* * オペレータ管理 * ： Astra Control Center は、 Operator Lifecycle Manager （ OLM ）対応のオペレータまたはクラスタスコープのオペレータで展開されるアプリケーションをサポートしません。
+
+
+
+
+== インターネットにアクセスできます
+
+インターネットに外部からアクセスできるかどうかを確認する必要があります。この処理を行わないと、 NetApp Cloud Insights からの監視データや指標データの受信、ネットアップサポートサイトへのサポートバンドルの送信など、一部の機能が制限される可能性があります。
+
+
+
+== 使用許諾
+
+Astra Control Center の全機能を使用するには、 Astra Control Center ライセンスが必要です。評価用ライセンスまたはフルライセンスをネットアップから取得する。ライセンスがないと、次のことができません。
+
+* カスタムアプリケーションを定義します
+* 既存のアプリケーションのスナップショットまたはクローンを作成します
+* データ保護ポリシーを設定
+
+
+Astra Control Center をお試しになりたい場合は link:setup_overview.html#add-a-full-or-evaluation-license["90 日間の評価版ライセンスを使用する"]。
+
+
+
+== オンプレミスの Kubernetes クラスタ用のサービスタイプ「 LoadBalancer 」
+
+Astra Control Center は、 "LoadBalancer （ Astra Control Center ネームスペースの svc/traefik ）タイプのサービスを使用し、アクセス可能な外部 IP アドレスが割り当てられている必要があります。オンプレミスの OpenShift クラスタでは、を使用できます https://docs.netapp.com/us-en/netapp-solutions/containers/rh-os-n_LB_MetalLB.html#installing-the-metallb-load-balancer["MetalLB"^] 外部 IP アドレスをサービスに自動的に割り当てる。内部 DNS サーバ構成では、 Astra Control Center に選択した DNS 名を、負荷分散 IP アドレスに指定する必要があります。
+
+
+
+== ネットワーク要件
+
+Astra Control Center をホストするクラスタは、次の TCP ポートを使用して通信します。これらのポートがファイアウォールを通過できることを確認し、 Astra ネットワークからの HTTPS 出力トラフィックを許可するようにファイアウォールを設定する必要があります。一部のポートでは、アストラコントロールセンターをホストするクラスタと各管理対象クラスタ（該当する場合はメモ）の両方の接続方法が必要です。
+
+|===
+| プロダクト | ポート | プロトコル | 方向（ Direction ） | 目的 
+
+
+| Astra Control Center の略 | 443 | HTTPS | 入力 | UI / API アクセス - Astra Control Center をホストしているクラスタと各管理対象クラスタの間で、このポートが双方向に開いていることを確認します 
+
+
+| Astra Control Center の略 | 9090 | HTTPS  a| 
+* 入力（ Astra Control Center をホストするクラスタへ）
+* 出力（各管理対象クラスタの各ワーカーノードのノード IP アドレスからのランダムポート）
+
+| 指標データから指標利用者へ - 各管理対象クラスタが、 Astra Control Center をホストしているクラスタ上のこのポートにアクセスできることを確認します 
+
+
+| Trident | 34571 | HTTPS | 入力 | ノードポッドの通信 
+
+
+| Trident | 9220 | HTTP | 入力 | 指標エンドポイント 
+|===
+
+
+== サポートされている Web ブラウザ
+
+Astra Control Center は、最新バージョンの Firefox 、 Safari 、 Chrome をサポートし、解像度は 1280 x 720 以上です。
+
+
+
+== 次の手順
+
+を表示します link:quick-start.html["クイックスタート"] 概要（ Overview ）：

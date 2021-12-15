@@ -1,0 +1,11 @@
+---
+section: release-notes
+title: リリースノート
+url: "/release-notes/rn_overview.html"
+entries:
+- title: このリリースの Astra Control Center の内容
+  url: "/release-notes/whats-new.html"
+- title: このリリースの既知の問題
+  url: "/release-notes/known-issues.html"
+- title: このリリースの既知の制限事項は以下のとおりです
+  url: "/release-notes/known-limitations.html"

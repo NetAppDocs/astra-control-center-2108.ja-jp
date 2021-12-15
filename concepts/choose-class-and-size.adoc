@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: concepts/choose-class-and-size.html 
+keywords: service level, storage class, storage classes, pv size, persistent volume size, volume size, bandwidth, performance, persistent, volume, kubernetes, containers 
+summary: Astra Control Center は、 ONTAP ストレージをベースとする Trident ストレージクラスのみをサポートしています。ストレージクラスと永続的ボリュームのサイズがパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。 
+---
+= ストレージクラスと永続的ボリュームサイズ
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/concepts/
+
+
+[role="lead"]
+Astra Control Center は、バックエンドストレージとして ONTAP をサポートします。ストレージクラスと永続的ボリューム（ PV ）のサイズがパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。
+
+
+
+== 概要
+
+Astra Control Center は、現時点で ONTAP ストレージを使用している Trident ストレージクラスのみをサポートしています。Astra Control Center は、 ONTAP 、 Trident 、関連ストレージクラスなど、導入済みのリソースを検出して使用します。
+
+
+NOTE: Trident のストレージクラスは、 Astra Control Center の外部で事前に設定しておく必要があります。
+
+
+
+== ストレージクラス
+
+Astra Control Center にクラスタを追加する場合、永続ボリュームに対して以前に検出されたストレージクラスのいずれかを選択するように求められます。ストレージクラスのサービスレベルは、容量や帯域幅のさまざまなニーズに対応するように設計されています。検出されたこれらのストレージクラスは、 Astra Control Center 内で使用できます。
+
+
+
+== 永続的なボリュームのサイズとパフォーマンス
+
+コストの比較や例が記載された Trident の情報を参照してください。サービスレベルとボリュームサイズを組み合わせてパフォーマンス目標を達成する方法を把握するのに役立ちます。
+
+
+
+== 詳細については、こちらをご覧ください
+
+* https://netapp-trident.readthedocs.io/en/stable-v21.01/dag/kubernetes/storage_configuration_trident.html["ストレージ構成に関する Trident のドキュメント"^]
+
