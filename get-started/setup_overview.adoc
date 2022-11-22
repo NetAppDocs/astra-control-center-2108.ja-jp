@@ -14,10 +14,10 @@ summary: Astra Control Center をインストールして UI にログインし�
 Astra Control Center をインストールして UI にログインし、パスワードを変更したら、ライセンスの設定、クラスタの追加、ストレージの管理、バケットの追加を行います。
 
 .タスク
-* <<Add a license for Astra Control Center>>
-* <<Add cluster>>
-* <<Add a storage backend>>
-* <<Add a bucket>>
+*  a license for Astra Control Center
+*  cluster
+*  a storage backend
+*  a bucket
 
 
 
@@ -114,8 +114,8 @@ IMPORTANT: Astra Control Center で管理するクラスタを追加したあと
 
 次のオプションを使用して、すでに検出されているストレージバックエンドを追加できます。
 
-* <<Add storage backend using Dashboard>>
-* <<Add storage backend using Backends option>>
+*  storage backend using Dashboard
+*  storage backend using Backends option
 
 
 
@@ -195,7 +195,7 @@ TIP: バケット名と概要は、バックアップを作成するときに後
 
 NOTE: このオプションは、最初に作成したバケットに対しては表示されません。
 
-.. 追加して続行します <<Add S3 access credentials,クレデンシャル情報>>。
+.. 追加して続行します  S3 access credentials,クレデンシャル情報。
 
 
 

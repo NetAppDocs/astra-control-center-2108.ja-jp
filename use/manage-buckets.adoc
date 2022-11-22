@@ -39,7 +39,7 @@ Astra API を使用してバケットを管理する方法については、を�
 バケットの管理に関連して次のタスクを実行できます。
 
 * link:../get-started/setup_overview.html#add-a-bucket["バケットを追加します"]
-* <<Edit a bucket>>
+*  a bucket
 
 
 
