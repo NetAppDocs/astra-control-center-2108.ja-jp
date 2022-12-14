@@ -29,6 +29,7 @@ OpenShift クラスタでアプリケーションをホストするプロジェ�
 OC new-project ワードプレス ` OC adm policy add -scc to -group anyuid system: serviceaccounts:wordpress `OC adm policy add -scc to -user Privileged -z default-n wordpress
 
 ====
+.必要なもの
 アプリケーションを別のクラスタにクローニングするには、デフォルトのバケットが必要です。最初のバケットを追加した時点でデフォルトのバケットになります。
 
 .手順
@@ -53,6 +54,7 @@ OC new-project ワードプレス ` OC adm policy add -scc to -group anyuid syst
 . * Clone Summary * ：クローンの詳細を確認し、 * Clone * をクリックします。
 
 
+.結果
 Astra Control Center では、入力した情報に基づいてアプリケーションのクローンを作成します。新しいアプリケーション・クローンが [*Apps*] ページの [Available] 状態になると ' クローン操作は正常に実行されます
 
 

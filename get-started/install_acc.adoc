@@ -13,8 +13,8 @@ summary: 環境に関するいくつかの前提条件に対処した後に Astr
 
 Astra Control Center をインストールするには、次の手順に従います。
 
-*  Astra Control Center
-*  in to the Astra Control Center UI
+* <<Astra Control Center をインストールします>>
+* <<Astra Control Center UI にログインします>>
 
 
 
@@ -39,6 +39,7 @@ oc get apiservices
 ----
 
 
+.このタスクについて
 Astra Control Center のインストールプロセスでは、次のことが実行されます。
 
 * Astra コンポーネントを NetApp-acc' （またはカスタムの名前付き）名前空間にインストールします
@@ -242,8 +243,8 @@ NOTE: CR によって設定されたプロパティは、最初の Astra Control
 +
 .. 前の手順でイメージをプッシュしたレジストリパスに '[docd_registry_path]' を変更します
 .. 「 accountName 」文字列を、アカウントに関連付ける名前に変更します。
-.. 「 astraトラ アドレス」文字列をブラウザで使用する FQDN に変更して、 Astra にアクセスします。アドレスには 'http://' または https:// を使用しないでくださいこの FQDN をコピーしてで使用します  in to the Astra Control Center UI,後の手順。
-.. 「 email 」の文字列をデフォルトの初期管理者アドレスに変更します。この E メールアドレスをコピーしてで使用します  in to the Astra Control Center UI,後の手順。
+.. 「 astraトラ アドレス」文字列をブラウザで使用する FQDN に変更して、 Astra にアクセスします。アドレスには 'http://' または https:// を使用しないでくださいこの FQDN をコピーしてで使用します <<Astra Control Center UI にログインします,後の手順>>。
+.. 「 email 」の文字列をデフォルトの初期管理者アドレスに変更します。この E メールアドレスをコピーしてで使用します <<Astra Control Center UI にログインします,後の手順>>。
 .. インターネットに接続されていないサイトの場合は AutoSupport の「 enrolled 」を「 false 」に変更し、接続されているサイトの場合は「 true 」を保持します。
 .. （オプション）アカウントに関連付けられたユーザの姓「 firstName 」と名「 lastName 」を追加します。この手順は、 UI ですぐに実行することもあとで実行することもできます。
 .. （任意）インストールで必要に応じて、「 torageClass 」の値を別の Trident ストレージクラスリソースに変更します。
@@ -466,13 +467,13 @@ metadata:
 ACC をインストールした後、デフォルトの管理者のパスワードを変更し、 ACC UI ダッシュボードにログインします。
 
 .手順
-. ブラウザで 'Astra_control_center_min YAML の 'astraitAddress' で使用した FQDN を入力します  Astra Control Center,ACC をインストールしました。
+. ブラウザで 'Astra_control_center_min YAML の 'astraitAddress' で使用した FQDN を入力します <<Astra Control Center をインストールします,ACC をインストールしました>>。
 . プロンプトが表示されたら、自己署名証明書を受け入れます。
 +
 
 NOTE: カスタム証明書はログイン後に作成できます。
 
-. Astra Control Center のログインページで 'eMA_control_center_min YAML で 'email' に使用した値を次のように入力します  Astra Control Center,ACC をインストールしましたに続き、ワンタイム・パスワード（「 ACC-[UUID] 」）を入力します。
+. Astra Control Center のログインページで 'eMA_control_center_min YAML で 'email' に使用した値を次のように入力します <<Astra Control Center をインストールします,ACC をインストールしました>>に続き、ワンタイム・パスワード（「 ACC-[UUID] 」）を入力します。
 +
 
 NOTE: 誤ったパスワードを 3 回入力すると、管理者アカウントは 15 分間ロックされます。
@@ -503,6 +504,6 @@ kubectl logs --follow -n netapp-acc-operator $(kubectl get pods -n netapp-acc-op
 
 
 
-== 次の手順
+== 次のステップ
 
 を実行して導入を完了します link:setup_overview.html["セットアップのタスク"]。
