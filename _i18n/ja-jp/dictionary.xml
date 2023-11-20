@@ -18,7 +18,6 @@
   <block id="ff66234381e2d5213adaf96c742cb4c3" category="paragraph">Astra Control Center を使用すると、 VM 環境内で実行される Kubernetes クラスタを管理、移行、保護することもできます。</block>
   <block id="d13de4a83d7b44c2e65495def8ef1c7b" category="section-title">を参照してください。</block>
   <block id="ef22ff17624b3faeed227ce5c717eb5f" category="inline-link">Astra Control Service のマニュアル</block>
-  <block id="6762180adf48075df77efbf264e982ec" category="list-text"><block ref="6762180adf48075df77efbf264e982ec" category="inline-link-rx"></block></block>
   <block id="602e96d6119ef01f1a803f4cddcb9587" category="inline-link">Astra Control Control のドキュメント</block>
   <block id="fd9a6046692c31d75a879a86c9059420" category="list-text"><block ref="fd9a6046692c31d75a879a86c9059420" category="inline-link-rx"></block></block>
   <block id="14d9b10c6196045941347a9e85704b50" category="inline-link">Astra Trident のドキュメント</block>
@@ -64,10 +63,7 @@
   <block id="4d9496325ef678735e8ac8b99b7a562b" category="section-title">サポートされているアプリケーション</block>
   <block id="3a54aa940f4f100708ea189c6ce031c7" category="paragraph">Astra Control Center は、 Operator Lifecycle Manager （ OLM ）対応のオペレータまたはクラスタを対象としたオペレータによって展開されるアプリケーションをサポートしません。</block>
   <block id="9ceaa15e10dc0e56e79bbb4822552022" category="paragraph">ネットアップでは、 Snapshot とバックアップの安全性と一貫性を確保するために、いくつかのアプリケーションの検証を行っています。</block>
-  <block id="be46076931cd53387cf526748531fc6f" category="inline-link">Astra Control Service の検証済みアプリケーションと標準アプリケーションの違いをご確認ください</block>
-  <block id="ea62af9d3d4954730fa2c07009e49c66" category="list-text"><block ref="d674c8ed82f2facf048e5aa68e13df70" category="inline-link-rx"></block>。</block>
   <block id="823eb2faefa80af2ef88a171cfc0a501" category="inline-link">Astra Control Center の検証済みアプリケーションと標準アプリケーションの違いをご確認ください</block>
-  <block id="75e27f7256629bea1f115d1a2e35ff6a" category="list-text"><block ref="9d3644841f7a0a31e08f219b3140c67c" category="inline-link-rx"></block>。</block>
   <block id="3cf57593346f365ce163d769c70a8cab" category="paragraph">Astra Control で使用するアプリケーションの種類に関係なく、必ず自分でバックアップとリストアのワークフローをテストして、ディザスタリカバリの要件を満たすことを確認してください。</block>
   <block id="5f4b9e6660ba4e73dc9c6aa214e60cde" category="section-title">Astra Control Service の仕組み</block>
   <block id="972dbc054c14df6a8a668ad2c71b9afa" category="paragraph">Astra Control Service は、常時稼働し、最新の機能で更新される、ネットアップが管理するクラウドサービスです。複数のコンポーネントを利用して、アプリケーションデータのライフサイクル管理を実現します。</block>
@@ -1422,4 +1418,6 @@
   <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
+  <block id="931607e4df934f12f0a0d0323f739e8c" category="list-text"><block ref="46bdba95fad7359beee853f2ee144260" category="inline-link-macro-rx"></block>。</block>
+  <block id="8c12e73d5653755d89cc3e42b0fa4b92" category="list-text"><block ref="8c12e73d5653755d89cc3e42b0fa4b92" category="inline-link-rx"></block></block>
 </blocks>
