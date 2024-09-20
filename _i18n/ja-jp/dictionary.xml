@@ -86,7 +86,6 @@
   <block id="90d397f2aa31c2e6d9f5dfda5d12adca" category="paragraph">Astra Control Center は、お客様のプライベートクラウドでローカルに実行されます。</block>
   <block id="9b04dea5fba4d366b92ef41197eae5e2" category="paragraph">最初のリリースでは、 Astra Control Center は ONTAP 9.5 以降を搭載した OpenShift Kubernetes クラスタと Trident ストレージバックエンドをサポートする予定です。</block>
   <block id="51269e2584d26b04961877ec77db6da7" category="paragraph">クラウド接続環境では、 Cloud Insights を使用して高度なモニタリングとテレメトリを提供します。Cloud Insights 接続がない場合、 Astra Control Center では、限定的な（ 7 日間の指標）監視と計測データを使用できます。また、オープン指標エンドポイントを介して Kubernetes の標準の監視ツール（ Prometheus や Grafana など）にエクスポートすることもできます。</block>
-  <block id="1bc8163319d46bff9915aa0226885a42" category="paragraph">Astra Control Center は、 AutoSupport と Active IQ のエコシステムに完全に統合されており、ユーザとネットアップのサポートにトラブルシューティングと使用に関する情報を提供します。</block>
   <block id="26849905a5aa23f71bc18ee28e352604" category="paragraph">Astra Control Center を試用するには、 90 日間の評価版ライセンスを使用します。評価版は、 E メールとコミュニティ（ Slack チャンネル）のオプションでサポートされています。また、製品内サポートダッシュボードから技術情報アーティクルやドキュメントにアクセスすることもできます。</block>
   <block id="b4851e92b19af0c5c82447fc0937709d" category="inline-link">要件</block>
   <block id="e63cc3795b9216d59b085bd3111a248d" category="paragraph">Astra Control Center をインストールして使用するには、一定の要件を満たす必要があります<block ref="bdde32b2c988689d803729c06660acb4" category="inline-link-rx"></block>。</block>
@@ -1420,4 +1419,5 @@
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="931607e4df934f12f0a0d0323f739e8c" category="list-text"><block ref="46bdba95fad7359beee853f2ee144260" category="inline-link-macro-rx"></block>。</block>
   <block id="8c12e73d5653755d89cc3e42b0fa4b92" category="list-text"><block ref="8c12e73d5653755d89cc3e42b0fa4b92" category="inline-link-rx"></block></block>
+  <block id="4ffa5f8c75a25d5db0add99affd09af7" category="paragraph">Astra Control Centerは、AutoSupportとActive IQのデジタルアドバイザ（デジタルアドバイザとも呼ばれる）エコシステムに完全に統合されており、ユーザとNetAppのサポートにトラブルシューティングや使用状況の情報を提供します。</block>
 </blocks>
